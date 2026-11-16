@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>gov</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="background-pattern"></div>
+
+    <main class="identity-screen">
+
+        <!-- STICKY HEADER -->
+
+        <header class="navigation">
+
+            <button class="back-button" aria-label="Back">‹</button>
+
+            <h2>Δελτίο Ταυτότητας</h2>
+
+            <button class="menu-button" aria-label="Menu">⋮</button>
+
+        </header>
+
+
+        <!-- TOP SECTION -->
+
+        <section class="top-section">
+
+            <div class="identity-top">
+
+                <div class="identity-number">
+
+                    <small>Αριθμός:</small>
+
+                    <h2>ΠΜ 23426</h2>
+
+                    <small>Εκδόθηκε:</small>
+
+                    <p>23/10/2026</p>
+
+                </div>
+
+
+                <div class="profile-photo">
+
+                    <img
+                        src="photos/cbe7f466-3c74-4de5-b914-aecc052013e4.png"
+                        alt="Demo portrait"
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- MAIN CONTENT -->
+
+        <section class="content">
+
+
+            <!-- ACTION BUTTONS -->
+
+            <div class="actions">
+
+                <button class="action wallet-action">
+
+                    <span class="icon"><img src="photos/png-transparent-computer-icons-wallet-wallet-angle-text-rectangle-thumbnail.png" alt="" width="30px"></span>
+
+                    <span>
+                        Προσθήκη στο
+                        <b>Wallet</b>
+                    </span>
+
+                </button>
+
+
+                <button class="action">
+
+                    <span class="icon"><img src="https://www.svgrepo.com/show/415432/copy-documents-duplicate.svg" alt="" width="35px"></span>
+
+                    <span>Αντίγραφο</span>
+
+                </button>
+
+
+                <button class="action">
+
+                    <span class="icon"><img src="photos/qr-code-set_78370-5872.jpg" alt="" width="30px"></span>
+
+                    <span>Quick Scan</span>
+
+                </button>
+
+
+                <button class="action" id="openQR">
+
+                    <span class="icon"><img src="C:\Users\Alex\Desktop\gov-id\photos\QR_code_for_QRpedia.png" alt="" width="35px"></span>
+
+                    <span>Προβολή QR</span>
+
+                </button>
+
+            </div>
+
+
+            <!-- PERSONAL INFORMATION -->
+
+            <div class="personal-information">
+
+                <div class="field">
+                    <small>ΕΠΩΝΥΜΟ</small>
+                    <h2>ΚΥΡΙΑΚΟΥ</h2>
+                </div>
+
+                <div class="field">
+                    <small>SURNAME</small>
+                    <h2>KYRIAKOU</h2>
+                </div>
+
+                <div class="field">
+                    <small>ΟΝΟΜΑ</small>
+                    <h2>ΑΛΕΞΑΝΔΡΟΣ</h2>
+                </div>
+
+                <div class="field">
+                    <small>GIVEN NAME</small>
+                    <h2>ALEXANDER</h2>
+                </div>
+
+                <div class="field">
+                    <small>ΟΝΟΜΑ ΠΑΤΕΡΑ</small>
+                    <h2>ΧΡΗΣΤΟΣ</h2>
+                </div>
+
+                <div class="field">
+                    <small>FATHER'S NAME</small>
+                    <h2>CHRISTOS</h2>
+                </div>
+
+                <div class="field">
+                    <small>ΟΝΟΜΑ ΜΗΤΕΡΑΣ (MOTHER'S NAME)</small>
+                    <h2>ΕΥΓΕΝΙΑ</h2>
+                </div>
+
+                <div class="field">
+                    <small>ΗΜ. ΓΕΝΝΗΣΗΣ (DATE OF BIRTH)</small>
+                    <h2>011/10/2008</h2>
+                </div>
+
+                <div class="field">
+                    <small>ΤΟΠΟΣ ΓΕΝΝΗΣΗΣ (PLACE OF BIRTH)</small>
+                    <h2>ΘΕΣΣΑΛΟΝΙΚΗ</h2>
+                    <h2>ΘΕΣΣΑΛΟΝΙΚΗΣ</h2>
+                </div>
+
+                <div class="field">
+                    <small>ΑΡΧΗ ΕΚΔΟΣΗΣ (ISSUANCE OFFICE)</small>
+                    <h2>Τ.Α. ΤΟΥΜΠΑΣ-</h2>
+                    <h2>ΤΡΙΑΝΔΡΙΑΣ</h2>
+                </div>
+
+            </div>
+
+
+            <!-- FOOTER -->
+
+            <footer class="identity-footer">
+
+                <div class="document-code">
+                    <span>Κωδικός εγγράφου:</span>
+                    <strong>0Q5hi8V4rCJ-D9xqBKfQGQ</strong>
+                </div>
+
+                <p class="footer-greek">
+                    Δεν αποτελεί διεθνές ταξιδιωτικό έγγραφο
+                </p>
+
+                <p class="footer-english">
+                    Not an international travel document
+                </p>
+
+            </footer>
+
+        </section>
+
+    </main>
+
+
+    <!-- QR POPUP -->
+
+    
+<div class="qr-popup" id="qrPopup">
+
+    <div class="qr-content">
+
+        <img
+            src="photos/scan1.png"
+            alt="QR Code"
+            class="qr-image"
+        >
+
+    </div>
+
+    <button class="close-qr" id="closeQR">
+        Κλείσιμο
+    </button>
+
+</div>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

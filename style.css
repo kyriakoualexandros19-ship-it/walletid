@@ -1,0 +1,715 @@
+
+/* =====================================
+   GLOBAL
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+
+    background: #001e4d;
+    color: white;
+
+    overflow-x: hidden;
+}
+
+
+/* =====================================
+   BACKGROUND PATTERN
+===================================== */
+
+.background-pattern {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+    opacity: 0.2;
+
+    background-image: radial-gradient(
+        #0875ff 1.5px,
+        transparent 1.5px
+    );
+
+    background-size: 23px 23px;
+}
+
+
+/* =====================================
+   MAIN SCREEN
+===================================== */
+
+.identity-screen {
+    --photo-size: clamp(125px, 43vw, 210px);
+
+    width: 100%;
+    min-height: 100vh;
+
+    position: relative;
+
+    background: linear-gradient(
+        180deg,
+        #06468c,
+        #073773,
+        #03265b
+    );
+}
+
+
+/* =====================================
+   STICKY NAVIGATION
+===================================== */
+
+.navigation {
+    width: 100%;
+    height: 66px;
+
+    padding: 0 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #5c9bd2;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.navigation h2 {
+    font-size: 21px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.back-button,
+.menu-button {
+    background: transparent;
+    border: none;
+
+    color: white;
+    cursor: pointer;
+}
+
+.back-button {
+    font-size: 38px;
+    line-height: 1;
+}
+
+.menu-button {
+    font-size: 32px;
+}
+
+
+/* =====================================
+   TOP LIGHT BLUE SECTION
+===================================== */
+
+.top-section {
+    width: 100%;
+
+    padding: 20px 18px 0;
+
+    background: #5c9bd2;
+}
+
+
+/* =====================================
+   IDENTITY TOP
+===================================== */
+
+.identity-top {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        var(--photo-size);
+
+    column-gap: 12px;
+
+    align-items: start;
+
+    position: relative;
+
+    height: calc(var(--photo-size) * 0.8 + 18px);
+}
+
+
+/* =====================================
+   IDENTITY NUMBER
+===================================== */
+
+.identity-number {
+    min-width: 0;
+
+    text-align: left;
+
+    position: relative;
+    z-index: 2;
+
+    padding-bottom: 18px;
+}
+
+.identity-number small {
+    display: block;
+
+    font-size: clamp(15px, 4vw, 18px);
+
+    color: #e1efff;
+
+    margin-bottom: 8px;
+}
+
+.identity-number h2 {
+    font-size: clamp(19px, 5.2vw, 27px);
+
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+
+    overflow-wrap: anywhere;
+
+    margin-bottom: 22px;
+}
+
+.identity-number p {
+    font-size: clamp(17px, 4.5vw, 22px);
+
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+
+
+/* =====================================
+   PROFILE PHOTO
+===================================== */
+
+.profile-photo {
+    width: var(--photo-size);
+    height: var(--photo-size);
+
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    border: none;
+    padding: 0;
+
+    border-radius: 19px;
+
+    overflow: hidden;
+
+    z-index: 5;
+}
+
+.profile-photo img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border: none;
+}
+
+
+/* =====================================
+   CONTENT SECTION
+===================================== */
+
+.content {
+    width: 100%;
+
+    position: relative;
+
+    padding: 20px 18px 45px;
+
+    z-index: 2;
+}
+
+
+/* =====================================
+   ACTION BUTTONS - 2x2 GRID
+===================================== */
+
+.actions {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(2, 55px);
+
+    gap: 10px;
+
+    width: 100%;
+
+    margin: 0 auto 25px;
+}
+
+.action {
+    width: 100%;
+    height: 55px;
+    min-height: 55px;
+
+    padding: 4px 6px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: white;
+    color: #111;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 7px;
+
+    font-family: inherit;
+
+    font-size: 15px;
+    font-weight: 400;
+
+    line-height: 1.1;
+
+    cursor: pointer;
+
+    transition: background 0.2s;
+}
+
+.action:hover {
+    background: #e5f1ff;
+}
+
+.action .icon {
+    font-size: 23px;
+    flex-shrink: 0;
+}
+
+
+/* WALLET BUTTON */
+
+.wallet-action {
+    justify-content: flex-start;
+
+    padding-left: 10px;
+
+    text-align: left;
+}
+
+.wallet-action span:last-child {
+    display: block;
+    text-align: left;
+}
+
+.wallet-action b {
+    display: block;
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+/* =====================================
+   PERSONAL INFORMATION
+===================================== */
+
+.personal-information {
+    width: 100%;
+
+    position: relative;
+}
+
+.field {
+    padding: 18px 5px 12px;
+
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+}
+
+.field small {
+    display: block;
+
+    color: #a4c9f1;
+
+    font-size: 15px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 8px;
+
+    line-height: 1.4;
+}
+
+.field h2 {
+    font-size: 32px;
+
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    line-height: 1.2;
+
+    overflow-wrap: anywhere;
+
+    margin-bottom: 2px;
+}
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+.identity-footer {
+    position: relative;
+
+    text-align: center;
+
+    padding: 30px 10px 45px;
+
+    overflow: hidden;
+}
+
+.document-code {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 5px;
+
+    font-size: 6px;
+    font-weight: 500;
+
+    margin-bottom: 20px;
+}
+
+.document-code strong {
+    font-weight: 600;
+}
+
+.copy-icon {
+    font-size: 20px;
+}
+
+.footer-greek {
+    color: #a4c9f1;
+
+    font-size: 1px;
+
+    line-height: 1.6;
+
+    margin-bottom: 5px;
+}
+
+.footer-english {
+    color: #a4c9f1;
+
+    font-size: 6px;
+
+    line-height: 1.6;
+}
+
+.demo-watermark {
+    margin-top: 30px;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    font-weight: 700;
+
+    color: rgba(255,255,255,0.35);
+}
+
+
+/* =====================================
+   QR POPUP - TRANSPARENT OVERLAY
+===================================== */
+
+
+/* QR POPUP OVERLAY */
+.qr-popup {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+    height: 100dvh;
+
+    background: rgba(0, 20, 55, 0.48);
+
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    z-index: 9999;
+
+    display: none;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+    padding-bottom: max(20px, env(safe-area-inset-bottom));
+    box-sizing: border-box;
+}
+
+/* SHOW POPUP */
+.qr-popup.active {
+    display: flex;
+}
+
+/* QR CODE CONTAINER */
+.qr-content {
+    flex: 1;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 0;
+}
+
+/* QR IMAGE */
+.qr-image {
+    display: block;
+
+    width: 250px;
+    max-width: 85vw;
+    max-height: 65vh;
+
+    height: auto;
+
+    object-fit: contain;
+    border-radius: 11px;
+    margin: auto;
+}
+
+/* CLOSE BUTTON */
+.close-qr {
+    display: block;
+
+    width: 100%;
+    max-width: 400px;
+
+    height: 55px;
+    flex-shrink: 0;
+
+    margin-top: 15px;
+
+    background: #5c9bd2;
+    color: white;
+
+    border: none;
+    border-radius: 12px;
+
+    font-family: inherit;
+    font-size: 19px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background 0.2s ease;
+}
+
+.close-qr:hover {
+    background: #75b1e5;
+}
+
+
+/* =====================================
+   SMALL MOBILE SCREENS
+===================================== */
+
+@media (max-width: 360px) {
+
+    .identity-screen {
+        --photo-size: 125px;
+    }
+
+    .navigation {
+        height: 60px;
+        padding: 0 13px;
+    }
+
+    .navigation h2 {
+        font-size: 17px;
+    }
+
+    .top-section {
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+
+    .identity-top {
+        column-gap: 8px;
+    }
+
+    .identity-number small {
+        font-size: 13px;
+    }
+
+    .identity-number h2 {
+        font-size: 17px;
+    }
+
+    .identity-number p {
+        font-size: 15px;
+    }
+
+    .content {
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+
+    .actions {
+        grid-template-rows: repeat(2, 50px);
+        gap: 8px;
+    }
+
+    .action {
+        height: 50px;
+        min-height: 50px;
+
+        padding: 3px 4px;
+
+        font-size: 13px;
+        gap: 5px;
+    }
+
+    .wallet-action {
+        padding-left: 7px;
+    }
+
+    .wallet-action b {
+        font-size: 14px;
+    }
+
+    .action .icon {
+        font-size: 20px;
+    }
+
+    .field h2 {
+        font-size: 27px;
+    }
+
+    .field small {
+        font-size: 13px;
+    }
+
+    .document-code {
+        font-size: 11px;
+    }
+
+    .footer-greek,
+    .footer-english {
+        font-size: 12px;
+    }
+
+    .demo-qr {
+        width: 65vw;
+    }
+
+    .qr-title {
+        font-size: 21px;
+    }
+
+    .close-qr {
+        height: 50px;
+        font-size: 17px;
+    }
+}
+
+
+/* =====================================
+   LARGER MOBILE SCREENS
+===================================== */
+
+@media (min-width: 430px) {
+
+    .identity-screen {
+        --photo-size: 210px;
+    }
+
+    .top-section {
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+
+    .identity-top {
+        column-gap: 15px;
+    }
+
+    .content {
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+
+    .field h2 {
+        font-size: 34px;
+    }
+}
+
+
+/* =====================================
+   TABLET / DESKTOP FALLBACK
+===================================== */
+
+@media (min-width: 700px) {
+
+    .identity-screen {
+        --photo-size: 210px;
+    }
+
+    .top-section {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .identity-top {
+        max-width: 850px;
+        margin: auto;
+    }
+
+    .content {
+        max-width: 1000px;
+    }
+}
+
+
+/* =====================================
+   REDUCED MOTION
+===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    * {
+        transition: none !important;
+    }
+}
