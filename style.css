@@ -620,12 +620,12 @@ body {
     }
 
     .document-code {
-        font-size: 11px;
+        font-size: 20px;
     }
 
     .footer-greek,
     .footer-english {
-        font-size: 12px;
+        font-size: 20px;
     }
 
     .demo-qr {
